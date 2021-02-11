@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Travelmap</title>
+    <meta name="description" content="
+    日々の疲れを発散する為に綺麗な風景が広がる場所に行きたい。
+    けどそんな場所すぐ見つからない。そんな方の悩みを解決するサイトです">
+
+    <!--CSS-->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="index.css">
+  </head>
+  <body>
+    <div id="home" class="big-bg">
+      <header class="page-header wrapper">
+          <nav>
+              <ul class="main-nav">
+                  <% if user_signed_in? %>
+                      <li><%= link_to "こんにちは#{current_user.nickname}さん", "#", class: "user-nickname" %></li>
+                      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
+                      <li><%= link_to "新規投稿", "#", class: "newpost" %>
+                    <% else %>
+                      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+                      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+                  <% end %>
+              </ul>
+          </nav>
+      </header>
+
+          <div class="home-content wrapper">
+          <h2 class="page-title">An Unprecedented View</h2>
+          <p>今までにない景色に出会いに行きませんか？</p>
+      </div><!-- /.home-content -->
+    </div>
+</body>
+  </html>
