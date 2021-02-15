@@ -1,0 +1,84 @@
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">写真の情報を入力</h2>
+    <%= form_with model: @view, local: true do |f| %>
+
+      <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+      <%#= render 'shared/error_messages', model: f.object %>
+
+      <%# 風景画像 %>
+      <div class="img-upload">
+        <div class="weight-bold-text">
+          風景画像
+          <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"image" %>
+        </div>
+      </div>
+      <%# /風景画像 %>
+      <%# 詳細情報 %>
+      <div class="new-views">
+        <div class="weight-bold-text">
+          タイトル
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :title, class:"title-text", id:"view-title", placeholder:"例 最高の景色!!", maxlength:"40" %>
+
+        <div class="weight-bold-text">
+          説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :information, class:"information-text", id:"view-information", placeholder:"風景の説明（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+
+        <div class="weight-bold-text">
+          アドレス
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :address, class:"address-text", id:"view-address", placeholder:"例 愛知県名古屋市中村区1-1-1", maxlength:"40" %>
+
+        <div class="weight-bold-text">
+          アクセス
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :access, class:"access-text", id:"view-access", placeholder:"例 ◯◯ICから車で10分", maxlength:"40" %>
+
+        <div class="weight-bold-text">
+          施設名
+          <span class="required">任意</span>
+        </div>
+        <%= f.text_field :shop, class:"shop-text", id:"view-shop", placeholder:"例 藤崎スキー場", maxlength:"40" %>
+
+        <div class="weight-bold-text">
+          営業時間
+          <span class="required">任意</span>
+        </div>
+        <%= f.text_field :opening_hours, class:"opening_hours-text", id:"view-opening_hours", placeholder:"例 10:00〜18:00", maxlength:"40" %>
+
+        <div class="weight-bold-text">
+          電話番号
+          <span class="required">任意</span>
+        </div>
+        <%= f.text_field :phone_number, class:"phone_number-text", id:"view-phone_number", placeholder:"例 0000-000-000", maxlength:"40" %>
+
+        <div class="weight-bold-text">
+          値段
+          <span class="required">任意</span>
+        </div>
+        <%= f.text_field :price, class:"price-text", id:"view-price", placeholder:"例 施設に入る入場料", maxlength:"40" %>
+      </div>
+      <%# 詳細情報 %>
+
+      <%# 下部ボタン %>
+      <div class="sell-btn-contents">
+        <%= f.submit "投稿する", class:"sell-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    <% end %>
+  </div>
+
+</div>
