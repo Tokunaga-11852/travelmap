@@ -15,7 +15,7 @@ a {
   text-decoration: none;
 }
 img {
-  max-width: 20%;
+  max-width: 70%;
 }
 
 .main-nav {
@@ -41,7 +41,7 @@ img {
 }
 
 .wrapper {
-  max-width: 1100px;
+  // max-width: 1100px;
   margin: 0 auto;
   padding: 0 4%;
 }
@@ -74,4 +74,39 @@ img {
 }
 #home .page-title {
   text-transform: none;
+}
+
+.title {
+  font-size: 3vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.view-contents{
+    background-color: #DCDCDC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+.view-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+ul {
+  list-style: none;
+}
+.view-img {
+  width: 30vh;
+  height: 30vh;
+}
+
+* {
+  box-sizing: border-box;
 }

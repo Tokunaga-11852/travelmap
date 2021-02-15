@@ -24,7 +24,6 @@
 | phone_number  | integer    | null: false                    |
 | opening_hours | string     | null: false                    |
 | price         | string     | null: false                    |
-| area_id       | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
 
   Association
