@@ -21,7 +21,7 @@
 | address       | string     | null: false                    |
 | access        | string     | null: false                    |
 | shop          | string     | null: false                    |
-| phone_number  | integer    | null: false                    |
+| phone_number  | string     | null: false                    |
 | opening_hours | string     | null: false                    |
 | price         | string     | null: false                    |
 | user          | references | null: false, foreign_key: true |
