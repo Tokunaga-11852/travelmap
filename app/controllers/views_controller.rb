@@ -1,4 +1,8 @@
 class ViewsController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :view_id, only: [:edit, :show, :conditions, :update, :destroy]
+  before_action :conditions, only: [:edit, :update, :destroy]
+
   def index
     @view = View.all.includes(:user).order("created_at DESC")
   end
@@ -17,15 +21,12 @@ class ViewsController < ApplicationController
   end
 
   def edit
-    @view = View.find(params[:id])
   end
   
   def show
-    @view = View.find(params[:id])
   end
 
   def destroy
-    @view = View.find(params[:id])
     if @view.destroy
       redirect_to root_path
     else 
@@ -33,9 +34,7 @@ class ViewsController < ApplicationController
     end
   end
 
-
   def update
-    @view = View.find(params[:id])
     if @view.update(view_params)
       redirect_to action: :index
     else
@@ -59,5 +58,13 @@ class ViewsController < ApplicationController
         user_id: current_user.id)
   end
   
+  def view_id
+    @view = View.find(params[:id])
+  end
 
+  def conditions
+    if current_user.id != @view.user_id
+    redirect_to action: :index
+    end
+  end
 end
