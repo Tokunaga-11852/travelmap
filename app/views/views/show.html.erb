@@ -1,0 +1,58 @@
+<div class="view-show">
+  <div class="view-box">
+    <h2 class="name">
+      <%= @view.title %>
+    </h2>
+    <div class="view-img-content">
+      <%= image_tag @view.image,class:"view-box-img" %>
+    </div>
+
+    <%# ログインしているユーザーと投稿したユーザーが、同一人物の場合と同一人物ではない場合で、処理を分ける %>
+    <% if user_signed_in? %>
+      <% if current_user.id == @view.user_id %>
+        <%= link_to "投稿の編集", edit_view_path(@view.id), method: :get, class: "view-red-btn" %>
+        <p class="or-text">or</p>
+        <%= link_to "削除", view_path(@view.id), method: :delete, method: :delete, class:"view-destroy" %>
+      <% end %>
+    <%end %>
+
+    <div class="view-explain-box">
+      <span><%= @view.information %></span>
+    </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-view">投稿者</th>
+          <td class="detail-value"><%= @view.user.nickname %>
+        </td>
+        </tr>
+        <tr>
+          <th class="detail-view">住所</th>
+          <td class="detail-value"><%= @view.address %>
+        </td>
+        </tr>
+        <tr>
+          <th class="detail-view">アクセス</th>
+          <td class="detail-value"><%= @view.access %></td>
+        </tr>
+        <tr>
+          <th class="detail-view">施設名</th>
+          <td class="detail-value"><%= @view.shop %></td>
+        </tr>
+        <tr>
+          <th class="detail-view">電話番号</th>
+          <td class="detail-value"><%= @view.phone_number %></td>
+        </tr>
+        <tr>
+          <th class="detail-view">営業時間</th>
+          <td class="detail-value"><%= @view.opening_hours %></td>
+        </tr>
+        
+        <tr>
+          <th class="detail-view">値段</th>
+          <td class="detail-value"><%= @view.price %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
