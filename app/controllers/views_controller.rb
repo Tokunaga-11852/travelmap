@@ -24,6 +24,16 @@ class ViewsController < ApplicationController
     @view = View.find(params[:id])
   end
 
+  def destroy
+    @view = View.find(params[:id])
+    if @view.destroy
+      redirect_to root_path
+    else 
+      render :show
+    end
+  end
+
+
   def update
     @view = View.find(params[:id])
     if @view.update(view_params)
