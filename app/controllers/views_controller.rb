@@ -17,6 +17,7 @@ class ViewsController < ApplicationController
   end
 
   def edit
+    @view = View.find(params[:id])
   end
   
   def show
@@ -24,6 +25,7 @@ class ViewsController < ApplicationController
   end
 
   def update
+    @view = View.find(params[:id])
     if @view.update(view_params)
       redirect_to action: :index
     else

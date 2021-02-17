@@ -8,7 +8,7 @@ class CreateViews < ActiveRecord::Migration[6.0]
       t.string :shop,          null: false
       t.string :opening_hours, null: false
       t.string :price,         null: false
-      t.integer :phone_number, null: false
+      t.string :phone_number, null: false
       t.references :user,      foreign_key: true
       t.timestamps
     end
