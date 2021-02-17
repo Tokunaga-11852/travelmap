@@ -1,0 +1,87 @@
+.view-show {
+  background-image: image-url('mountain.png');
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.view-box {
+  width: 70vw;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.view-box>.name {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.view-box-img {
+  height: 50vh;
+  width: 60vw;
+  min-height: 500px;
+  background-color: #fff;
+  object-fit: contain;
+}
+
+.view-red-btn {
+  text-align: center;
+  background-color: #FFB6C1;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  padding: 1vh 10vw;
+  border: 1px solid #98FB98;
+}
+
+.view-destroy {
+  background-color: #A9A9A9;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  padding: 1vh 10vw;
+}
+.or-text {
+  font-size: 20px;
+}
+.detail-table {
+  margin-bottom: 30px;
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.detail-item {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+th {
+margin: 0;
+padding: 0;
+border: 1px solid #dedede;;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}

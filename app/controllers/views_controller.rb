@@ -20,6 +20,7 @@ class ViewsController < ApplicationController
   end
   
   def show
+    @view = View.find(params[:id])
   end
 
   def update

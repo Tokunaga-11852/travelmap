@@ -20,7 +20,22 @@
   display: flex;
   margin: 20px 100px 10px 0px;
 }
+
+h2, label, em{
+  font-size: 14px;
+}
+
+.actions {
+  margin-top: 10px;
+  font-size: 15px;
+}
 .big-bg {
   background-image: image-url('load.png');
   min-height: 100vh;
+  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
 }

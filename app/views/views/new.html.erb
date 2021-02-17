@@ -1,6 +1,6 @@
-<div class="items-sell-contents">
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">写真の情報を入力</h2>
+<div class="views-sell-contents">
+  <div class="views-sell-main">
+    <h2 class="views-sell-title">写真の情報を入力</h2>
     <%= form_with model: @view, local: true do |f| %>
 
       <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
@@ -32,7 +32,7 @@
           説明
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :information, class:"information-text", id:"view-information", placeholder:"風景の説明（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :information, class:"information-text", id:"view-information", placeholder:"風景の説明(例 この写真は◯◯の◯◯で撮った写真です、早朝に撮ると綺麗な写真が撮れます！)（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
 
         <div class="weight-bold-text">
           アドレス
