@@ -64,8 +64,11 @@ google mapのAPIを導入し、各ユーザーが投稿した住所が自動でg
 # GIF URL
  https://i.gyazo.com/c59c6d039215beb7d21fc4ee33c06e56.png
 
-# git clone 
+## git clone 
 git clone https://github.com/Tokunaga-11852/travelmap.git
+
+# ruby version
+ruby 2.6.5p114
 
 
    users テーブル
